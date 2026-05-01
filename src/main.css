@@ -1,0 +1,178 @@
+/* Background */
+body {
+  background: linear-gradient(135deg, #faf8ef, #f3efe6);
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  color: #776e65;
+  margin-bottom: 10px;
+}
+
+/* Root layout (fix your 30% padding issue 👇) */
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Game wrapper */
+.game {
+  background: #bbada0;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 90px);
+  grid-template-rows: repeat(4, 90px);
+  gap: 12px;
+}
+
+/* Cell base */
+.cell {
+  width: 90px;
+  height: 90px;
+  background: #cdc1b4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 10px;
+  color: #776e65;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Tile colors (same but slightly polished) */
+.cell-2 { background: #eee4da; }
+.cell-4 { background: #ede0c8; }
+.cell-8 { background: #f2b179; color: #fff; }
+.cell-16 { background: #f59563; color: #fff; }
+.cell-32 { background: #f67c5f; color: #fff; }
+.cell-64 { background: #f65e3b; color: #fff; }
+.cell-128 { background: #edcf72; color: #fff; }
+.cell-256 { background: #edcc61; color: #fff; }
+.cell-512 { background: #edc850; color: #fff; }
+.cell-1024 { background: #edc53f; color: #fff; }
+.cell-2048 { background: #edc22e; color: #fff; }
+
+/* Controls container */
+.controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Buttons */
+button {
+  width: 80px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #8f7a66, #7a6755);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* Click effect */
+button:active {
+  transform: scale(0.95);
+}
+
+.developer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #776e65;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+/* Highlight "blade" */
+.developer span {
+  font-weight: bold;
+  color: #8f7a66;
+  position: relative;
+}
+
+/* Cool underline animation */
+.developer span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #8f7a66;
+  transition: width 0.3s ease;
+}
+
+.developer span:hover::after {
+  width: 100%;
+}
+/* ===== RESPONSIVE ADDITION ===== */
+
+/* Make game scale properly */
+.game {
+  width: min(92vw, 420px);
+}
+
+/* Override fixed grid sizes */
+.grid {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+/* Make cells responsive */
+.cell {
+  width: 100%;
+  height: 100%;
+  font-size: clamp(14px, 5vw, 26px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .game {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .controls {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    width: 60px;
+    height: 45px;
+    font-size: 13px;
+  }
+}
+.restart{
+  margin: auto;
+}
