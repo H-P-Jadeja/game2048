@@ -6,7 +6,7 @@ A simple and interactive implementation of the classic **2048 puzzle game** buil
 
 ## 🚀 Demo
 
-👉 Add your live demo link here (if deployed on Vercel / Netlify)
+http://game2048-ten.vercel.app/
 
 ---
 
@@ -93,11 +93,6 @@ npm start
 
 ---
 
-## 📸 Screenshots
-
-👉 Add screenshots of your game here
-
----
 
 ## 🔥 Future Improvements
 
