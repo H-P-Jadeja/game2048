@@ -133,24 +133,22 @@ export default function App(){
   }
   function down_click(){
     let rotated = anticlockwise_rotation(grid)
-    // console.log(rotated)
     let newgrid = [];
-  for (let row = 0; row < 4; row++){
-    let nums = rotated[row].filter(num => num > 0);
-    for (let i = 0; i < nums.length - 1; i++){
-      if (nums[i] === nums[i + 1]){
-        nums[i] *= 2;
-        nums[i + 1] = 0;
-        i++;
+    for (let row = 0; row < 4; row++){
+      let nums = rotated[row].filter(num => num > 0);
+      for (let i = 0; i < nums.length - 1; i++){
+        if (nums[i] === nums[i + 1]){
+          nums[i] *= 2;
+          nums[i + 1] = 0;
+          i++;
+        }
       }
-    }
     nums = nums.filter(num => num > 0);
     while (nums.length < 4){
       nums.unshift(0);
     }
     newgrid.push(nums);
   }
-    // console.log(newgrid)
     let ans = clockwise_rotation(newgrid)
     let finalgrid = addNumber(ans)
     setGrid(finalgrid)
